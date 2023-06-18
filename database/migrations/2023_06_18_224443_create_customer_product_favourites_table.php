@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductColorsTable extends Migration
+class CreateCustomerProductFavouritesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateProductColorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_colors', function (Blueprint $table) {
+        Schema::create('customer_product_favourites', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_color')->nullable();
-            $table->integer('color_id')->nullable();
-            $table->integer('product_color')->nullable();
-            $table->softDelete();
+            $table->integer('product_id')->nullable();
+            $table->integer('customer_id')->nullable(); 
+            $table->softDelete(); 
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateProductColorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_colors');
+        Schema::dropIfExists('customer_product_favourites');
     }
 }
