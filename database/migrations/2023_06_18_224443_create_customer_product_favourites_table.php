@@ -17,7 +17,7 @@ class CreateCustomerProductFavouritesTable extends Migration
             $table->id();
             $table->integer('product_id')->nullable();
             $table->integer('customer_id')->nullable(); 
-            $table->softDelete(); 
+            $table->softDeletes(); 
             $table->timestamps();
         });
     }

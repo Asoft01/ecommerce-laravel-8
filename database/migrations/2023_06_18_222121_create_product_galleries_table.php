@@ -17,7 +17,7 @@ class CreateProductGalleriesTable extends Migration
             $table->id();
             $table->integer('product_id')->nullable();
             $table->string('gallery_image')->nullable(); 
-            $table->softDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

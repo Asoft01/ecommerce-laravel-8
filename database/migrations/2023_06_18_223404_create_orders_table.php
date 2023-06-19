@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
             $table->integer('status_id')->nullable();
             $table->integer('coupon_id')->nullable();
             $table->datetime('transaction_date')->nullable();
-            $table->softDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

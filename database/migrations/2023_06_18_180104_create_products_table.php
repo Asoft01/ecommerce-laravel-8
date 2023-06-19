@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->boolean('is_active')->default(0);
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->softDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

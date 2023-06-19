@@ -31,7 +31,7 @@ class CreateCustomersTable extends Migration
             $table->string('lat', 100)->nullable();
             $table->string('lng', 100)->nullable();
             $table->rememberToken();
-            $table->softDelete(); 
+            $table->softDeletes(); 
             $table->timestamps();
         });
     }
