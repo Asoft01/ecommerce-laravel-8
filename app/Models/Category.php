@@ -21,7 +21,7 @@ class Category extends Model
             $file = $request->file($filename); 
             $extension = $file->getClientOriginalExtension(); 
             $filename = time().'.'.$extension; 
-            $file->move('images/categories/', $filename); 
+            $file->move('image/categories/', $filename); 
             $category->image = $filename; 
         }
     }
