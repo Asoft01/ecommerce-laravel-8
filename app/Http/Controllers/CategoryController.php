@@ -37,14 +37,13 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $category = new Category;
-        $category->category_name = $request()->category_name;
-        $category->description = $request()->description; 
+        $category->category_name = $request->category_name;
+        $category->description = $request->description; 
         $category->is_active  = 1;
         $category->image('image', $category);
         if($category->save()){
             return redirect()->route('categories.index'); 
         }
-
     }
 
     /**
@@ -53,6 +52,7 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
+
     public function show(Category $category)
     {
         //
@@ -64,6 +64,7 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
+
     public function edit(Category $category)
     {
         //

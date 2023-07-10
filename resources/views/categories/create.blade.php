@@ -42,7 +42,7 @@
                                 <div class="box-body">
                                     <div class="form-group">
                                         <label for="">Image</label>
-                                        <input class="form-control" type="text" name="image" id="image" value="{{ old('image') }}" placeholder="Image">
+                                        <input class="form-control" type="file" name="image" id="image" value="{{ old('image') }}" placeholder="Image">
                                     </div>
                                 </div>
                             </div>
