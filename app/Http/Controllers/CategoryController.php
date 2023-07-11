@@ -67,7 +67,8 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
-        //
+        // dd($category);
+        return view('categories.edit')->with(['category' => $category]);
     }
 
     /**
@@ -79,7 +80,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category->category_name = $request->category_name; 
+        $category->description = $request->description; 
+        $category->is_active = $request->is_active; 
+        $category->image('image', $category);
+        if($category->save()){
+            return redirect()->route('categories.index');
+        } 
     }
 
     /**
@@ -90,6 +97,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        if($category->destroy(request()->id)){
+            return back();
+        }
     }
 }
