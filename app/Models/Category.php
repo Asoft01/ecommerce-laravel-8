@@ -16,9 +16,9 @@ class Category extends Model
         'image'
     ]; 
 
-    public static function image($filename, $category){
-        if($request->hasFile($filename)){
-            $file = $request->file($filename); 
+    public static function image($fileName, $category){
+        if(request()->hasfile($fileName)){
+            $file = request()->file($fileName); 
             $extension = $file->getClientOriginalExtension(); 
             $filename = time().'.'.$extension; 
             $file->move('image/categories/', $filename); 
