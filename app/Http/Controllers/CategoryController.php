@@ -67,7 +67,7 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
-        // dd($category);
+        // dd($category);;
         return view('categories.edit')->with(['category' => $category]);
     }
 
